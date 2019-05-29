@@ -6,10 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 //Define rest controller
+@RestController
 @SpringBootApplication
 public class Application {
 
@@ -18,9 +20,11 @@ public class Application {
 	}
 
 	// define propiedad controller.message:No message available
-	private String message;
+	@Value("${controller.message:No message available}")
+	private @Getter String message;
 
 	// define propiedad server.port:8080
+	@Value("${server.port:8080}")
 	private int port;
 
 	@GetMapping("/")

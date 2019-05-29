@@ -1,5 +1,8 @@
 package com.consulting.mgt.springboot.practica4.profiles.bean;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +18,10 @@ public class ConnectionDataBase {
 	private DummyDataSource datasource;
 
 	// define propiedad myapp.connection.url
+	@Value("${myapp.connection.url}")
 	private String connectionURL;
 
+	@Autowired
 	public ConnectionDataBase(DummyDataSource ds) {
 		this.datasource = ds;
 	}

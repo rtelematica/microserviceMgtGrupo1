@@ -12,3 +12,496 @@
 2019-05-29 00:08:41.946  INFO 5470 --- [main] c.c.m.springboot.practica4.Application   : hola
 2019-05-29 00:08:49.591  INFO 5470 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2019-05-29 00:08:49.593  INFO 5470 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:45:36.191  INFO 12965 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 12965 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:45:36.193  INFO 12965 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:45:36.861  INFO 12965 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:45:36.879  INFO 12965 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:45:36.879  INFO 12965 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:45:36.885  INFO 12965 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:45:36.939  INFO 12965 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:45:36.940  INFO 12965 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 722 ms
+2019-05-29 17:45:36.986  WARN 12965 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'connectionDataBase': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'myapp.connection.url' in value "${myapp.connection.url}"
+2019-05-29 17:45:36.988  INFO 12965 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-05-29 17:45:36.998  INFO 12965 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 17:45:37.007 ERROR 12965 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'connectionDataBase': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'myapp.connection.url' in value "${myapp.connection.url}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:380) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.consulting.mgt.springboot.practica4.Application.main(Application.java:10) [classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'myapp.connection.url' in value "${myapp.connection.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172) ~[spring-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237) ~[spring-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211) ~[spring-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:851) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1188) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 17 common frames omitted
+
+2019-05-29 17:46:39.725  INFO 12978 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 12978 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:46:39.728  INFO 12978 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:46:40.397  INFO 12978 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:46:40.414  INFO 12978 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:46:40.415  INFO 12978 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:46:40.420  INFO 12978 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:46:40.471  INFO 12978 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:46:40.472  INFO 12978 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 719 ms
+2019-05-29 17:46:40.630  INFO 12978 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:46:40.773  INFO 12978 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 17:46:40.777  INFO 12978 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 1.331 seconds (JVM running for 1.706)
+2019-05-29 17:48:19.351  INFO 12978 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-05-29 17:48:19.353  INFO 12978 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:48:20.598  INFO 12999 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 12999 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:48:20.599  INFO 12999 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:48:21.221  INFO 12999 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:48:21.238  INFO 12999 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:48:21.238  INFO 12999 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:48:21.243  INFO 12999 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:48:21.292  INFO 12999 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:48:21.293  INFO 12999 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 668 ms
+2019-05-29 17:48:21.448  INFO 12999 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:48:21.600  INFO 12999 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 17:48:21.603  INFO 12999 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 1.263 seconds (JVM running for 1.654)
+2019-05-29 17:48:21.604  INFO 12999 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: No connection URL provided
+2019-05-29 17:51:39.892  INFO 12999 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-05-29 17:51:39.894  INFO 12999 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:51:41.141  INFO 13040 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 13040 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:51:41.143  INFO 13040 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:51:41.803  INFO 13040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:51:41.821  INFO 13040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:51:41.821  INFO 13040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:51:41.827  INFO 13040 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:51:41.880  INFO 13040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:51:41.880  INFO 13040 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 713 ms
+2019-05-29 17:51:42.046  INFO 13040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:51:42.206  INFO 13040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 17:51:42.209  INFO 13040 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 1.345 seconds (JVM running for 1.733)
+2019-05-29 17:51:42.210  INFO 13040 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 17:52:12.202  INFO 13040 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-05-29 17:52:12.203  INFO 13040 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:52:13.417  INFO 13047 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 13047 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:52:13.418  INFO 13047 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:52:14.064  INFO 13047 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:52:14.081  INFO 13047 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:52:14.082  INFO 13047 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:52:14.086  INFO 13047 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:52:14.137  INFO 13047 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:52:14.138  INFO 13047 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 694 ms
+2019-05-29 17:52:14.296  INFO 13047 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:52:14.450  INFO 13047 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 17:52:14.453  INFO 13047 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 1.298 seconds (JVM running for 1.674)
+2019-05-29 17:52:14.454  INFO 13047 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: No connection URL provided
+2019-05-29 17:52:21.376  INFO 13047 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-05-29 17:52:21.378  INFO 13047 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:52:22.629  INFO 13050 --- [main] c.c.m.springboot.practica4.Application   : Starting Application on trial with PID 13050 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 17:52:22.630  INFO 13050 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 17:52:23.281  INFO 13050 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 17:52:23.300  INFO 13050 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 17:52:23.300  INFO 13050 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 17:52:23.306  INFO 13050 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 17:52:23.359  INFO 13050 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 17:52:23.360  INFO 13050 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 705 ms
+2019-05-29 17:52:23.529  INFO 13050 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 17:52:23.676  INFO 13050 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 17:52:23.697  INFO 13050 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 1.329 seconds (JVM running for 1.781)
+2019-05-29 17:52:23.698  INFO 13050 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:00:30.011  INFO 13050 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-05-29 18:00:30.014  INFO 13050 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:00:30.531  INFO 13163 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : Starting ProfilesTest on trial with PID 13163 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:00:30.532  INFO 13163 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : The following profiles are active: dev
+2019-05-29 18:00:31.723  INFO 13163 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:00:31.931  INFO 13163 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : Started ProfilesTest in 1.755 seconds (JVM running for 2.423)
+2019-05-29 18:00:31.932  INFO 13163 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:00:32.100  INFO 13163 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : profilesTest [START] ------------------------
+2019-05-29 18:00:32.100  INFO 13163 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:00:32.106  INFO 13163 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.consulting.mgt.springboot.practica4.ApplicationTests], using SpringBootContextLoader
+2019-05-29 18:00:32.107  INFO 13163 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.consulting.mgt.springboot.practica4.ApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-05-29 18:00:32.107  INFO 13163 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.consulting.mgt.springboot.practica4.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-05-29 18:00:32.110  INFO 13163 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.consulting.mgt.springboot.practica4.Application for test class com.consulting.mgt.springboot.practica4.ApplicationTests
+2019-05-29 18:00:32.111  INFO 13163 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-05-29 18:00:32.112  INFO 13163 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@9255c05, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5da7cee2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@78830d9a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5ce4369b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f829c76, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1cb19dba, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7c3ebc6b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1931d99, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6a9950f1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7ad54c55]
+2019-05-29 18:00:32.153  INFO 13163 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:01:06.570  INFO 13185 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : Starting ProfilesTest on trial with PID 13185 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:01:06.571  INFO 13185 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : The following profiles are active: dev
+2019-05-29 18:01:07.638  INFO 13185 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:01:07.831  INFO 13185 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : Started ProfilesTest in 1.519 seconds (JVM running for 2.107)
+2019-05-29 18:01:07.832  INFO 13185 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:01:08.010  INFO 13185 --- [main] c.c.m.s.p.test.profiles.ProfilesTest     : profilesTest [START] ------------------------
+2019-05-29 18:01:08.011  INFO 13185 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:01:08.019  INFO 13185 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.consulting.mgt.springboot.practica4.ApplicationTests], using SpringBootContextLoader
+2019-05-29 18:01:08.020  INFO 13185 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.consulting.mgt.springboot.practica4.ApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-05-29 18:01:08.020  INFO 13185 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.consulting.mgt.springboot.practica4.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-05-29 18:01:08.025  INFO 13185 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.consulting.mgt.springboot.practica4.Application for test class com.consulting.mgt.springboot.practica4.ApplicationTests
+2019-05-29 18:01:08.027  INFO 13185 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-05-29 18:01:08.028  INFO 13185 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@9255c05, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5da7cee2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@78830d9a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5ce4369b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f829c76, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1cb19dba, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7c3ebc6b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1931d99, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6a9950f1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7ad54c55]
+2019-05-29 18:01:08.061  INFO 13185 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:02:26.146  INFO 13212 --- [main] c.c.m.s.practica4.ApplicationTests       : Starting ApplicationTests on trial with PID 13212 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:02:26.147  INFO 13212 --- [main] c.c.m.s.practica4.ApplicationTests       : The following profiles are active: dev
+2019-05-29 18:02:27.264  INFO 13212 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:02:27.464  INFO 13212 --- [main] c.c.m.s.practica4.ApplicationTests       : Started ApplicationTests in 1.577 seconds (JVM running for 2.181)
+2019-05-29 18:02:27.465  INFO 13212 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:02:27.650  INFO 13212 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:02:37.088  INFO 13218 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13218 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:02:37.090  INFO 13218 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: dev
+2019-05-29 18:02:38.105  INFO 13218 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:02:38.132  INFO 13218 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:02:38.132  INFO 13218 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:02:38.144  INFO 13218 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:02:38.221  INFO 13218 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:02:38.221  INFO 13218 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1094 ms
+2019-05-29 18:02:38.425  INFO 13218 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:02:38.719  INFO 13218 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:02:38.722  INFO 13218 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.101 seconds (JVM running for 2.496)
+2019-05-29 18:02:38.723  INFO 13218 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:02:47.704  INFO 13218 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:03.460  INFO 13223 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13223 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:03:03.463  INFO 13223 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: qa
+2019-05-29 18:03:04.481  INFO 13223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:03:04.508  INFO 13223 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:03:04.508  INFO 13223 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:03:04.519  INFO 13223 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:03:04.589  INFO 13223 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:03:04.589  INFO 13223 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1082 ms
+2019-05-29 18:03:04.790  INFO 13223 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:05.069  INFO 13223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:03:05.073  INFO 13223 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.116 seconds (JVM running for 2.514)
+2019-05-29 18:03:05.074  INFO 13223 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://qa-server.com/some-resource
+2019-05-29 18:03:12.319  INFO 13223 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:18.087  INFO 13228 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13228 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:03:18.090  INFO 13228 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: staging
+2019-05-29 18:03:19.092  INFO 13228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:03:19.120  INFO 13228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:03:19.120  INFO 13228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:03:19.133  INFO 13228 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:03:19.212  INFO 13228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:03:19.213  INFO 13228 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1081 ms
+2019-05-29 18:03:19.428  INFO 13228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:19.728  INFO 13228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:03:19.731  INFO 13228 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.214 seconds (JVM running for 2.682)
+2019-05-29 18:03:19.733  INFO 13228 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://staging-server.com/some-resource
+2019-05-29 18:03:22.413  INFO 13228 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:28.203  INFO 13231 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13231 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:03:28.205  INFO 13231 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: prod
+2019-05-29 18:03:29.098  INFO 13231 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:03:29.131  INFO 13231 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:03:29.132  INFO 13231 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:03:29.145  INFO 13231 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:03:29.212  INFO 13231 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:03:29.213  INFO 13231 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 970 ms
+2019-05-29 18:03:29.418  INFO 13231 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:29.697  INFO 13231 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:03:29.701  INFO 13231 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.503 seconds (JVM running for 2.896)
+2019-05-29 18:03:29.702  INFO 13231 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://prod-server.com/some-resource
+2019-05-29 18:03:33.942  INFO 13231 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:03:38.654  INFO 13234 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13234 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:03:38.657  INFO 13234 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: patito
+2019-05-29 18:03:39.661  INFO 13234 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:03:39.689  INFO 13234 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:03:39.690  INFO 13234 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:03:39.702  INFO 13234 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:03:39.771  INFO 13234 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:03:39.772  INFO 13234 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1079 ms
+2019-05-29 18:03:39.822  WARN 13234 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in URL [jar:file:/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-05-29 18:03:39.825  INFO 13234 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-05-29 18:03:39.834  INFO 13234 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 18:03:39.914 ERROR 13234 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.consulting.mgt.springboot.practica4.profiles.bean.ConnectionDataBase required a bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' in your configuration.
+
+2019-05-29 18:05:59.073  INFO 13281 --- [main] c.c.m.s.practica4.ApplicationTests       : Starting ApplicationTests on trial with PID 13281 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:05:59.074  INFO 13281 --- [main] c.c.m.s.practica4.ApplicationTests       : The following profiles are active: dev
+2019-05-29 18:05:59.633  WARN 13281 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in file [/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected single matching bean but found 2: devDataSource,defaultDataSource
+2019-05-29 18:05:59.642  INFO 13281 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 18:05:59.645 ERROR 13281 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.consulting.mgt.springboot.practica4.profiles.bean.ConnectionDataBase required a single bean, but 2 were found:
+	- devDataSource: defined by method 'devDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+	- defaultDataSource: defined by method 'defaultDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2019-05-29 18:05:59.650 ERROR 13281 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ea9f6af] to prepare test instance [com.consulting.mgt.springboot.practica4.ApplicationTests@23c388c2]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.1.jar:2.22.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in file [/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected single matching bean but found 2: devDataSource,defaultDataSource
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected single matching bean but found 2: devDataSource,defaultDataSource
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:221) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1225) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 45 common frames omitted
+
+2019-05-29 18:07:52.334  INFO 13314 --- [main] c.c.m.s.practica4.ApplicationTests       : Starting ApplicationTests on trial with PID 13314 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:07:52.335  INFO 13314 --- [main] c.c.m.s.practica4.ApplicationTests       : No active profile set, falling back to default profiles: default
+2019-05-29 18:07:53.457  INFO 13314 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:07:53.661  INFO 13314 --- [main] c.c.m.s.practica4.ApplicationTests       : Started ApplicationTests in 1.586 seconds (JVM running for 2.203)
+2019-05-29 18:07:53.662  INFO 13314 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: No connection URL provided
+2019-05-29 18:07:53.798  INFO 13314 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:07:59.990  INFO 13320 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13320 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:07:59.992  INFO 13320 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: patito
+2019-05-29 18:08:01.022  INFO 13320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:08:01.053  INFO 13320 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:08:01.053  INFO 13320 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:08:01.064  INFO 13320 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:08:01.138  INFO 13320 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:08:01.138  INFO 13320 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1099 ms
+2019-05-29 18:08:01.327  INFO 13320 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:08:01.611  INFO 13320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:08:01.614  INFO 13320 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.093 seconds (JVM running for 2.497)
+2019-05-29 18:08:01.615  INFO 13320 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: No connection URL provided
+2019-05-29 18:08:11.088  INFO 13320 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:08:16.987  INFO 13325 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13325 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:08:16.989  INFO 13325 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: prod
+2019-05-29 18:08:18.050  INFO 13325 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:08:18.083  INFO 13325 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:08:18.083  INFO 13325 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:08:18.094  INFO 13325 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:08:18.166  INFO 13325 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:08:18.166  INFO 13325 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1128 ms
+2019-05-29 18:08:18.217  WARN 13325 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in URL [jar:file:/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected single matching bean but found 2: prodDataSource,defaultDataSource
+2019-05-29 18:08:18.220  INFO 13325 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-05-29 18:08:18.229  INFO 13325 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 18:08:18.231 ERROR 13325 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.consulting.mgt.springboot.practica4.profiles.bean.ConnectionDataBase required a single bean, but 2 were found:
+	- prodDataSource: defined by method 'prodDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+	- defaultDataSource: defined by method 'defaultDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2019-05-29 18:08:57.117  INFO 13334 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13334 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:08:57.119  INFO 13334 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: prod
+2019-05-29 18:08:58.129  INFO 13334 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:08:58.161  INFO 13334 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:08:58.161  INFO 13334 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:08:58.174  INFO 13334 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:08:58.243  INFO 13334 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:08:58.243  INFO 13334 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1080 ms
+2019-05-29 18:08:58.295  WARN 13334 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in URL [jar:file:/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected single matching bean but found 2: prodDataSource,defaultDataSource
+2019-05-29 18:08:58.298  INFO 13334 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-05-29 18:08:58.307  INFO 13334 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 18:08:58.309 ERROR 13334 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.consulting.mgt.springboot.practica4.profiles.bean.ConnectionDataBase required a single bean, but 2 were found:
+	- prodDataSource: defined by method 'prodDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+	- defaultDataSource: defined by method 'defaultDataSource' in class path resource [com/consulting/mgt/springboot/practica4/profiles/config/ProfilesConfig.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2019-05-29 18:09:21.871  INFO 13346 --- [main] c.c.m.s.practica4.ApplicationTests       : Starting ApplicationTests on trial with PID 13346 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:09:21.872  INFO 13346 --- [main] c.c.m.s.practica4.ApplicationTests       : No active profile set, falling back to default profiles: default
+2019-05-29 18:09:22.503  WARN 13346 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in file [/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-05-29 18:09:22.512  INFO 13346 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-29 18:09:22.616 ERROR 13346 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.consulting.mgt.springboot.practica4.profiles.bean.ConnectionDataBase required a bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' in your configuration.
+
+2019-05-29 18:09:22.621 ERROR 13346 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5119fb47] to prepare test instance [com.consulting.mgt.springboot.practica4.ApplicationTests@1e34c607]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.1.jar:2.22.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.1.jar:2.22.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'connectionDataBase' defined in file [/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/classes/com/consulting/mgt/springboot/practica4/profiles/bean/ConnectionDataBase.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.consulting.mgt.springboot.practica4.profiles.bean.api.DummyDataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1654) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1213) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 45 common frames omitted
+
+2019-05-29 18:10:08.248  INFO 13383 --- [main] c.c.m.s.practica4.ApplicationTests       : Starting ApplicationTests on trial with PID 13383 (started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:10:08.249  INFO 13383 --- [main] c.c.m.s.practica4.ApplicationTests       : The following profiles are active: dev
+2019-05-29 18:10:09.210  INFO 13383 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:10:09.418  INFO 13383 --- [main] c.c.m.s.practica4.ApplicationTests       : Started ApplicationTests in 2.031 seconds (JVM running for 2.642)
+2019-05-29 18:10:09.419  INFO 13383 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://dev-server.com/some-resource
+2019-05-29 18:10:09.612  INFO 13383 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:10:18.218  INFO 13398 --- [main] c.c.m.springboot.practica4.Application   : Starting Application v0.0.1-SNAPSHOT on trial with PID 13398 (/Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil/target/4-Spring-Configuracion-Multi-Perfil-0.0.1-SNAPSHOT.jar started by xvhx in /Users/xvhx/mgt-ws/mi-curso-de-microservicios/4-Spring-Configuracion-Multi-Perfil)
+2019-05-29 18:10:18.220  INFO 13398 --- [main] c.c.m.springboot.practica4.Application   : The following profiles are active: prod
+2019-05-29 18:10:19.252  INFO 13398 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-29 18:10:19.283  INFO 13398 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-29 18:10:19.284  INFO 13398 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-29 18:10:19.297  INFO 13398 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/xvhx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-05-29 18:10:19.374  INFO 13398 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-29 18:10:19.375  INFO 13398 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1113 ms
+2019-05-29 18:10:19.590  INFO 13398 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-29 18:10:19.881  INFO 13398 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-29 18:10:19.884  INFO 13398 --- [main] c.c.m.springboot.practica4.Application   : Started Application in 2.141 seconds (JVM running for 2.533)
+2019-05-29 18:10:19.885  INFO 13398 --- [main] c.c.m.s.p.p.bean.ConnectionDataBase      : Connected to: http://prod-server.com/some-resource
+2019-05-29 18:10:40.529  INFO 13398 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

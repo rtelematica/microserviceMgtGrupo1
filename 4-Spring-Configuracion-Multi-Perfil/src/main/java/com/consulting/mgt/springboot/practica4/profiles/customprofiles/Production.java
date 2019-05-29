@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Profile;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 // profile production
-public @interface ProductionProfile {
+@Profile("prod")
+public @interface Production {
 
 }

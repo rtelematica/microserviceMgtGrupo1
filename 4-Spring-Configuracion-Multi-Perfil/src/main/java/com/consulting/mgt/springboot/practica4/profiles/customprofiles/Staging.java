@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Profile;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 // profile staging
-public @interface StagingProfile {
+@Profile("staging")
+public @interface Staging {
 
 }

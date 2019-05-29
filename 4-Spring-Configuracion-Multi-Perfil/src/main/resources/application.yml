@@ -1,1 +1,46 @@
 #A comment
+   
+myapp:
+  connection:
+    url: No connection URL provided
+    
+logging:
+  file: logs/application.log
+  
+---
+# define dev profile
+spring:
+  profiles: dev
+  
+myapp:
+  connection:
+    url: http://dev-server.com/some-resource
+
+---
+# define qa profile
+spring:
+  profiles: qa
+  
+myapp:
+  connection:
+    url: http://qa-server.com/some-resource
+
+---
+# define staging profile
+spring:
+  profiles: staging
+  
+myapp:
+  connection:
+    url: http://staging-server.com/some-resource
+    
+---
+# define prod profile
+spring:
+  profiles: prod
+  
+myapp:
+  connection:
+    url: http://prod-server.com/some-resource
+
+    

@@ -42,32 +42,28 @@
 							</tr>
 						</tbody>
 					</table>
-					
-					<!-- 
-					<span th:if="${usersPage.totalPages > 0}" 
-    					th:each="pageNumber : ${pageNumbers}">
-    					<a th:href="@{/(size=${usersPage.size}, page=${pageNumber})}" 
-    					   th:text=${pageNumber}
-    					   th:class="${pageNumber==usersPage.number + 1} ? active"></a>
-        
-					</span>
-					 -->
-					
+
 					<nav aria-label="Page navigation example">
-					  <ul th:if="${usersPage.totalPages > 0}" class="pagination">
-					    <li th:each="pageNumber : ${pageNumbers}" class="page-item">
-					    	<a class="page-link" 
-					    	   th:href="@{/(size=${usersPage.size}, page=${pageNumber})}" 
-    					   	   th:text=${pageNumber}>No. page</a>
-					    </li>
-					  </ul>
+						<ul th:if="${usersPage.totalPages > 0}" class="pagination">
+							<li th:each="pageNumber : ${pageNumbers}" class="page-item">
+								<a class="page-link"
+								th:href="@{/(size=${usersPage.size}, page=${pageNumber+1})}"
+								th:text=${pageNumber+1}>No. page</a>
+							</li>
+						</ul>
 					</nav>
-					<p class="my-5"><h3>Add User</h3>
-						<a href="/add-user-form" class="btn btn-primary"><i
-							class="fas fa-user-plus ml-2"></i></a>
-					</p>
+
+				</div>
 			</div>
 		</div>
 	</div>
+	<div class="container my-5">
+		<p class="my-5">
+		<h3>Add User</h3>
+		<a href="/add-user-form" class="btn btn-primary"><i
+			class="fas fa-user-plus ml-2"></i></a>
+		</p>
+	</div>
+
 </body>
 </html>

@@ -22,7 +22,7 @@
 $(document).ready(function(){
 	
 	var USER_API_HOST = "http://localhost:8080";
-	var USER_API_BASE_PATH = "/api-rest";
+	var USER_API_BASE_PATH = USER_API_HOST+"/api-rest";
 	
 	$("#name").val("");
 	$("#email").val("");
@@ -55,7 +55,7 @@ $(document).ready(function(){
 		if(validateUserForm(new_user)){
 		
 			$.ajax({
-				url: USER_API_HOST+USER_API_BASE_PATH+"/users",
+				url: USER_API_BASE_PATH+"/usuarios",
 				method: "POST",
 				contentType: "application/json; charset=UTF-8",
 				dataType: "json",

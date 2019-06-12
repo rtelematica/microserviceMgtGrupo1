@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	var USER_API_HOST = "http://localhost:8080";
-	var USER_API_BASE_PATH = "/api-rest";
+	var USER_API_BASE_PATH = USER_API_HOST+"/api-rest";
 	
 	var page_size = 5;
 	var current_page = 0;
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	var deleteUser = function(userId){
 		
 		$.ajax({
-			url: USER_API_HOST+USER_API_BASE_PATH+"/users/"+userId,
+			url: USER_API_BASE_PATH+"/usuarios/"+userId,
 			method: "DELETE",
 			success: function( result ) {
 				loadUsers(0, page_size);
@@ -76,18 +76,18 @@ $(document).ready(function(){
 	var loadUsers = function(page, size){
 		
 		$.ajax({
-			url: USER_API_HOST+USER_API_BASE_PATH+"/users?page="+page+"&size="+size,
+			url: USER_API_BASE_PATH+"/usuarios?page="+page+"&size="+size,
 			data: {
 				
 			},
 			success: function( result ) {
-				if(result._embedded.users.length==0){
+				if(result._embedded.amigos.length==0){
 					$("#no_users").show();
 					$("#have_users").hide();
 				}else {
 					$("#no_users").hide();
 					$("#have_users").show();
-					printUsers(result._embedded.users);
+					printUsers(result._embedded.amigos);
 					printNavigation(result.page);
 				}
 				

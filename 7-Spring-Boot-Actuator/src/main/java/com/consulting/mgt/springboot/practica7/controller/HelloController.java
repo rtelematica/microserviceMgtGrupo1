@@ -40,6 +40,7 @@ public class HelloController {
 
 	@GetMapping("/ocr")
 	public String ocr() {
+		
 		Metrics.counter("times.entering.ocr", "times", "ocr").increment();
 
 		if (!SpelUtils.resolve("features['ocr'].enabled", boolean.class)) {

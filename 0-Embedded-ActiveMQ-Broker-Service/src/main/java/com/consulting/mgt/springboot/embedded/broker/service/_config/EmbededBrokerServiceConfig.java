@@ -7,10 +7,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class EmbededBrokerServiceConfig {
 
-	@Bean
-	public BrokerService broker() throws Exception {
-		BrokerService broker = new BrokerService();
-		broker.addConnector("tcp://localhost:61616");
-		return broker;
-	}
+	//Define bean BrokerService tcp://localhost:61616
+	
 }

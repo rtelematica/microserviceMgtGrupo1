@@ -10,12 +10,24 @@ import com.consulting.mgt.springboot.practica9.embedded.broker.service.model.Ord
 import com.consulting.mgt.springboot.practica9.embedded.broker.service.producer.OrderProducer;
 
 // Define Bean Rest Controller
+@RestController
 public class OrderController {
 
 	private static int i = 1;
 
 	// Inyecta OrderProducer
+	@Autowired
+	private OrderProducer orderProducer;
 
 	// Implementa handler method "/place-order"
+	@GetMapping("/place-order")
+	public int placeOrder() {
+		
+		Order order = new Order(i, "Order no: "+i, new Date());
+		
+		orderProducer.send(order);
+		
+		return i++;
+	}
 	
 }

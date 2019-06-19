@@ -16,10 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Define como Bean
+@Component
 public class OrderConsumer {
 
 	// Define JMS Listener que escuche la queue destino ORDER_QUEUE
-	public void receiveMessage(Order order, MessageHeaders headers, Message message, Session session) {
+	@JmsListener(destination = ActiveMQConfig.ORDER_QUEUE)
+	public void receiveMessage(@Payload Order order, @Headers MessageHeaders headers, Message message, Session session) {
 		log.info("received <" + order.getId() + ">");
 
 		log.info("- - - - - - - - - - - - - - - - - - - - - - - -");

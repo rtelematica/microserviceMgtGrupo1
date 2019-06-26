@@ -10,9 +10,24 @@ import com.consulting.mgt.springboot.practica14.throttling.restcontroller.model.
 import com.consulting.mgt.springboot.practica14.throttling.restcontroller.model.Users;
 
 // Define clase de Configuracion
+@Configuration
 public class ApplicationConfig {
 
 	// Define bean Users
+	@Bean
+	public Users users() {
+		return new Users(usersList());
+	}
 
 	// Define beanList<User>
+	@Bean
+	public List<User> usersList() {
+		List<User> list = new ArrayList<>();
+
+		for (int i = 0; i < 3; i++) {
+			list.add(new User("Ivan " + i, 30 + i));
+		}
+
+		return list;
+	}
 }

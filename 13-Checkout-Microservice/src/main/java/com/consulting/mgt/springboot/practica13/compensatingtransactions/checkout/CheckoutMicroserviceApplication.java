@@ -17,7 +17,19 @@ public class CheckoutMicroserviceApplication {
 	}
 
 	// Inyecte AppDemoService appDemoService;
-
+	@Autowired
+	private AppDemoService appDemoService;
+	
 	// Define bean CommandLineRunner para perfil "reserve-checkout-withdrawal"
+	@Bean
+	@Profile("reserve-checkout-withdrawal")
+	public CommandLineRunner startup() {
+
+		return (args) -> {
+
+			appDemoService.reserveCheckoutWithdrawal("Ivan", 123, 2505.85, "1234-1234-5678-5678");
+
+		};
+	}
 
 }

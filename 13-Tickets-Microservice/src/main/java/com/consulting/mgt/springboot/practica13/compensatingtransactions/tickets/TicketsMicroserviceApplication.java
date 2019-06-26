@@ -25,7 +25,8 @@ public class TicketsMicroserviceApplication {
 
 		return (args) -> {
 
-			// Implementa
+			appDemoService.reserveTicket("Ivan", 123, "Muse", "Palacio de los Deportes",
+					"XYZ-001", 1800.50, 325, 0, 2125.50);
 
 		};
 	}
@@ -36,7 +37,7 @@ public class TicketsMicroserviceApplication {
 
 		return (args) -> {
 
-			// Implementa
+			appDemoService.cancelTicketReservation(123);
 
 		};
 	}

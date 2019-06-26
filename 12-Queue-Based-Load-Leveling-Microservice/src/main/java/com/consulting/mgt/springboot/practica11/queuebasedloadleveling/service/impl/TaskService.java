@@ -12,8 +12,36 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // elimina abstract
-public abstract class TaskService implements ITaskService {
-
+public class TaskService implements ITaskService {
+	
 	// Implementa
+	private ExecutorService executorService;
+	
+	private ObjectFactory<? extends ITaskProducer> taskProducerObjectFactory;
+	
+	public TaskService(	ExecutorService es, 
+						ObjectFactory<? extends ITaskProducer> tpof) {
+		this.executorService = es;
+		this.taskProducerObjectFactory = tpof;
+	}
+	
+	@Override
+	public String triggerTasks(int triggeredTasks) {
+		
+		int triggered = 0;
+
+		for (int i = 0; i < triggeredTasks; i++) {
+
+			ITaskProducer taskProducer = taskProducerObjectFactory.getObject();
+
+			executorService.submit((Runnable) taskProducer);
+
+			triggered++;
+
+			log.info("Task {} triggered !", (i + 1));
+		}
+
+		return String.format("%d tasks triggered", triggered);
+	}
 
 }

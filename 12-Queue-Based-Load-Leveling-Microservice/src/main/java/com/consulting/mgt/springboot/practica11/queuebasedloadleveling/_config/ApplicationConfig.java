@@ -11,5 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
 	// Implementa
+	public static int PRODUCER_TASK_DELAY;
+	public static int CONSUMER_TASK_DELAY;
+	
+	public ApplicationConfig(	@Value("${producer.task.delay}") int ptd, 
+								@Value("${consumer.task.delay}") int ctd ) {
+		PRODUCER_TASK_DELAY = ptd;
+		CONSUMER_TASK_DELAY = ctd;
+	}
+	
+	@Bean
+	public ExecutorService myExecutorService() {
+		return Executors.newFixedThreadPool(2);
+	}
 
 }

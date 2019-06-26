@@ -20,5 +20,30 @@ import com.consulting.mgt.springboot.practica11.queuebasedloadleveling.task.prod
 public class SimpleProfileConfiguration {
 
 	// Implementa
+	@Autowired
+	private ObjectFactory<SimpleTaskProducer> simpleTaskProducerObjectGactory;
+	
+	@Autowired
+	@Qualifier("myExecutorService")
+	private ExecutorService myExecutorService;
+	
+	@Bean
+	@Scope("prototype")
+	public SimpleTaskProducer simpleTaskProducer() {
+		return new SimpleTaskProducer(1, 
+				simpleTaskConsumer(), 
+				ApplicationConfig.PRODUCER_TASK_DELAY);
+	}
+
+	@Bean
+	public SimpleTaskConsumer simpleTaskConsumer() {
+		return new SimpleTaskConsumer(
+				ApplicationConfig.CONSUMER_TASK_DELAY);
+	}
+	
+	@Bean
+	public ITaskService taskService() {
+		return new TaskService(myExecutorService, simpleTaskProducerObjectGactory);
+	}
 
 }

@@ -13,12 +13,20 @@ public class AccountHolder {
 
 	private static final Map<Integer, Account> accounts = new HashMap<>();
 
-	private static final AtomicLong nextEventId = new AtomicLong(0);
+	private static final AtomicLong nextSequenceId = new AtomicLong(0);
 
 	private static final AtomicInteger nextAccountId = new AtomicInteger(0);
 
-	public static long nextEventId() {
-		return nextEventId.incrementAndGet();
+	public static long nextSequenceId() {
+		return nextSequenceId.incrementAndGet();
+	}
+	
+	public static void setSequenceId(long newValue) {
+		nextSequenceId.set(newValue);
+	}
+	
+	public static void setAccountId(int newValue) {
+		nextAccountId.set(newValue);
 	}
 
 	public static int nextAccountId() {
@@ -46,7 +54,7 @@ public class AccountHolder {
 		return new HashMap<Integer, Account>(accounts);
 	}
 
-	public static Account getAccount(String tenant) {
+	public static Account getAccount(String owner) {
 		Iterator<Entry<Integer, Account>> it = accounts.entrySet().iterator();
 
 		while (it.hasNext()) {
@@ -54,7 +62,7 @@ public class AccountHolder {
 
 			// System.out.println(pair.getKey() + " = " + pair.getValue());
 
-			if (tenant.trim().equals(pair.getValue().getOwner())) {
+			if (owner.trim().equals(pair.getValue().getOwner())) {
 				return pair.getValue().clone();
 			}
 		}
@@ -63,6 +71,6 @@ public class AccountHolder {
 
 	public static void resetState() {
 		accounts.clear();
-		nextEventId.set(0);
+		nextSequenceId.set(0);
 	}
 }

@@ -31,16 +31,16 @@ public class HomeController {
 	public void setup() {
 		apisList.put("GET apis-list", uri + "/");
 
-		apisList.put("GET All Tenant Accont", uri + "/account/");
-		apisList.put("GET Tenant Accont", uri + "/account/{tenant}");
+		apisList.put("GET All Owner Accont", uri + "/account/");
+		apisList.put("GET Owner Accont", uri + "/account/{owner}");
 
-		apisList.put("GET Create Tenant Accont", uri + "/account/{tenant}/create");
+		apisList.put("GET Create Owner Accont", uri + "/account/{owner}/create");
 
-		apisList.put("GET Deposit Tenant Accont", uri + "/account/{tenant}/deposit/{amount}");
-		apisList.put("GET Withdrawal Tenant Accont", uri + "/account/{tenant}/withdrawal/{amount}");
+		apisList.put("GET Deposit Owner Accont", uri + "/account/{owner}/deposit/{amount}");
+		apisList.put("GET Withdrawal Owner Accont", uri + "/account/{owner}/withdrawal/{amount}");
 
 		apisList.put("GET Transfer Between Accounts", uri
-				+ "/transfer/from/{tenantFrom}/to/{tenantTo}/amount/{amount}");
+				+ "/transfer/from/{ownerFrom}/to/{ownerTo}/amount/{amount}");
 
 		apisList.put("GET Recover Transactions", uri + "/recover/transactions");
 

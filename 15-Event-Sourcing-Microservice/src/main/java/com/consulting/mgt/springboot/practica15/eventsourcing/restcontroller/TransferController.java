@@ -21,13 +21,27 @@ public class TransferController {
 	@Autowired
 	private DomainEventProcessor domainEventProcessor;
 
-	@GetMapping("/from/{tenantFrom}/to/{tenantTo}/amount/{amount}")
-	public String accountOf(@PathVariable String tenantFrom,
-			@PathVariable String tenantTo,
+	@GetMapping("/from/{ownerFrom}/to/{ownerTo}/amount/{amount}")
+	public String accountOf(@PathVariable String ownerFrom,
+			@PathVariable String ownerTo,
 			@PathVariable BigDecimal amount) {
 
 		// Implementa
-		
-		return null;
+		Account tenantAccountFrom = AccountHolder.getAccount(ownerFrom);
+		Account tenantAccountTo = AccountHolder.getAccount(ownerTo);
+
+		MoneyTransferEvent moneyTransfer = new MoneyTransferEvent(
+				AccountHolder.nextSequenceId(),
+				new Date().getTime(),
+				amount,
+				tenantAccountFrom.getAccountNo(),
+				tenantAccountTo.getAccountNo());
+
+		domainEventProcessor.process(moneyTransfer);
+
+		String message = String.format("transfer of $ %s, from %s to %s done !",
+				amount, tenantAccountFrom.getOwner(), tenantAccountTo.getOwner());
+
+		return message;
 	}
 }

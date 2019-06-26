@@ -28,34 +28,64 @@ public class AccountController {
 	public Map<Integer, Account> accounts() {
 
 		// Implementa
-		return null;
+		return AccountHolder.getAll();
 	}
 
-	@GetMapping("/{tenant}")
-	public Account accountOf(@PathVariable String tenant) {
+	@GetMapping("/{owner}")
+	public Account accountOf(@PathVariable String owner) {
 
 		// Implementa
-		return null;
+		return AccountHolder.getAccount(owner);
 	}
 
-	@GetMapping("/{tenant}/create")
-	public String createAccountOf(@PathVariable String tenant) {
+	@GetMapping("/{owner}/create")
+	public String createAccountOf(@PathVariable String owner) {
 
 		// Implementa
-		return null;
+		AccountCreateEvent newAccount = new AccountCreateEvent(
+				AccountHolder.nextSequenceId(),
+				new Date().getTime(),
+				AccountHolder.nextAccountId(),
+				owner);
+
+		domainEventProcessor.process(newAccount);
+
+		Account tenantAccount = AccountHolder.getAccount(newAccount.getAccountNo());
+
+		return tenantAccount.getOwner() + " account created !";
 	}
 
-	@GetMapping("/{tenant}/deposit/{amount}")
-	public String accountDeposit(@PathVariable String tenant, @PathVariable BigDecimal amount) {
+	@GetMapping("/{owner}/deposit/{amount}")
+	public String accountDeposit(@PathVariable String owner, @PathVariable BigDecimal amount) {
 
 		// Implementa
-		return null;
+		Account tenantAccount = AccountHolder.getAccount(owner);
+
+		MoneyDepositEvent moneyDeposit = new MoneyDepositEvent(
+				AccountHolder.nextSequenceId(),
+				new Date().getTime(),
+				tenantAccount.getAccountNo(),
+				amount);
+
+		domainEventProcessor.process(moneyDeposit);
+
+		return owner + " deposit done !";
 	}
 
-	@GetMapping("/{tenant}/withdrawal/{amount}")
-	public String accountWithdrawal(@PathVariable String tenant, @PathVariable BigDecimal amount) {
+	@GetMapping("/{owner}/withdrawal/{amount}")
+	public String accountWithdrawal(@PathVariable String owner, @PathVariable BigDecimal amount) {
 
 		// Implementa
-		return null;
+		Account tenantAccount = AccountHolder.getAccount(owner);
+
+		MoneyWithdrawalEvent moneyWithdrawal = new MoneyWithdrawalEvent(
+				AccountHolder.nextSequenceId(),
+				new Date().getTime(),
+				tenantAccount.getAccountNo(),
+				amount);
+
+		domainEventProcessor.process(moneyWithdrawal);
+
+		return owner + " withdrawal done !";
 	}
 }

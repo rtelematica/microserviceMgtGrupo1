@@ -12,9 +12,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data
-//descomenta @EqualsAndHashCode(callSuper = true)
-//descomenta @ToString(callSuper = true)
-public class MoneyWithdrawalEvent /* descomenta extends DomainEvent */ {
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class MoneyWithdrawalEvent extends DomainEvent {
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,9 +22,19 @@ public class MoneyWithdrawalEvent /* descomenta extends DomainEvent */ {
 	private int accountNo;
 
 	// Define constructor
+	public MoneyWithdrawalEvent(long sequenceId, long createdTime, int accountNo, BigDecimal money) {
+			super(sequenceId, createdTime, MoneyWithdrawalEvent.class.getSimpleName());
+			this.money = money;
+			this.accountNo = accountNo;
+		}
 
 	// @Override
 	public void process() {
-		// Impementa
+		// Implementa
+		Account account = AccountHolder.getAccount(accountNo);
+		if (account == null) {
+			throw new AccountException("Account not found");
+		}
+		account.handleEvent(this);
 	}
 }

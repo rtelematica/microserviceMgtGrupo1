@@ -6,6 +6,8 @@ public class ImageMicroserviceClientImpl implements ImageMicroserviceClient {
 
 	@Override
 	public String getImagePath() {
+		
+		// Implementar
 
 		return null;
 	}

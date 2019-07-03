@@ -16,5 +16,39 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- Define el flujo descrito -->
+	
+	<int-file:inbound-channel-adapter 
+		directory="file:src/main/resources/read" 
+		filename-pattern="sample*"
+		auto-startup="true"
+		prevent-duplicates="true"
+		ignore-hidden="true"
+		channel="inputChannel">
+		
+	<int:poller fixed-rate="5" time-unit="SECONDS" />
+	
+	</int-file:inbound-channel-adapter>
+	
+	<int:channel id="inputChannel" />
+	
+	<int:service-activator 
+		input-channel="inputChannel"
+		ref="filePrinterService"
+		method="print"
+		output-channel="outputChannel" />
+		
+	<int:channel id="outputChannel" />
+	
+	<int-file:outbound-channel-adapter
+		directory="file:src/main/resources/write"
+		channel="outputChannel"
+		auto-create-directory="true"
+		mode="REPLACE" />
+	
+	<bean id="filePrinterService" 
+		class="com.consulting.mgt.springboot.practica16.pipesandfilters.service.FilePrinterService" />
+		
+		
+	
 
 </beans>

@@ -27,6 +27,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- enable spring boot admin starter client -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.1.5</version>
+		</dependency>
+		
 		<!-- agregar dependencia spring-data-rest-hal-browser -->
 
 		<dependency>

@@ -6,7 +6,9 @@ public class PriceClientImpl implements PriceMicroserviceClient {
 
 	@Override
 	public String getPrice() {
-
+		
+		// Implementar
+		
 		return null;
 	}
 }

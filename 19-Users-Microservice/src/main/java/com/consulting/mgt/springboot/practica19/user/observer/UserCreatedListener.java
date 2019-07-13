@@ -17,17 +17,26 @@ import lombok.extern.slf4j.Slf4j;
 public class UserCreatedListener {
 
 	// Inyecte Bean RabbitTemplate rabbitTemplate.
+	@Autowired
+	private RabbitTemplate rabbitTemplate;
 
 	// Inyecte Bean FanoutExchange fanoutExchange
+	@Autowired
+	private FanoutExchange fanoutExchange;
 
 	// Inyecte ObjectMapper objectMapper
+	@Autowired
+	private ObjectMapper objectMapper;
 
 	@SneakyThrows
 	// Manejador de evento UserCreatedEvent
+	@EventListener
 	public void handleUserCreatedEvent(UserCreatedEvent uce) {
-		//log.info("sending User Created Event to {}", fanoutExchange.getName());
+		log.info("sending User Created Event to {}", fanoutExchange.getName());
 
 		// Implemente
+		rabbitTemplate.convertAndSend(fanoutExchange.getName(), "", 
+				objectMapper.writeValueAsString(uce));
 		
 		log.info("--------------------------------------------------------------");
 	}

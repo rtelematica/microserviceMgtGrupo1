@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class UserService {
 
 	// Inyecte Bean ApplicationEventPublisher publisher
+	@Autowired
+	private ApplicationEventPublisher publisher;
 
 	@Autowired
 	private UserRepository userRepository;
@@ -28,5 +30,6 @@ public class UserService {
 		log.info("publishing User Created Event");
 		
 		// Implemente envio de evento UserCreatedEvent
+		publisher.publishEvent(UserCreatedEventBuilder.build(user));
 	}
 }

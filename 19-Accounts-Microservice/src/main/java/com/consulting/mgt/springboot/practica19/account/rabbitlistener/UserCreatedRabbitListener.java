@@ -16,6 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 public class UserCreatedRabbitListener {
 
 	// Inyecte Bean ApplicationEventPublisher publisher
+	
+	@Autowired
+	private ApplicationEventPublisher publisher;
 
 	@Autowired
 	private ObjectMapper objectMapper;
@@ -23,12 +26,16 @@ public class UserCreatedRabbitListener {
 	@SneakyThrows
 	@RabbitListener(queues = { "#{userCreatedAccountQueue.name}" })
 	public void handleUserCreatedEvent(String message) {
+		
 		log.info("rabbit listener User Created Event");
+		
 		UserCreatedEvent uce = objectMapper.readValue(message, UserCreatedEvent.class);
+		
 		log.info("event: {}", uce);
 		log.info("publishing User Created Event (from Account)");
 
 		// Implemente envio de evento UserCreatedEvent
+		publisher.publishEvent(uce);
 		
 		log.info("--------------------------------------------------------------");
 	}

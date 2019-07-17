@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
+import com.consulting.mgt.springboot.practica19.account.events.AccountCreatedEvent;
 import com.consulting.mgt.springboot.practica19.account.events.AccountCreatedEventBuilder;
 import com.consulting.mgt.springboot.practica19.account.model.Account;
 import com.consulting.mgt.springboot.practica19.account.repository.AccountRepository;
@@ -18,6 +19,8 @@ public class AccountService {
 	private AccountRepository accountRepository;
 
 	// Inyecte la dependencia faltante
+	@Autowired
+	private ApplicationEventPublisher publisher;
 
 	public void createAccount(Account account) {
 
@@ -28,5 +31,6 @@ public class AccountService {
 		log.info("publishing Account Created Event");
 		
 		// Implemente la logica faltante
+		publisher.publishEvent(AccountCreatedEventBuilder.build(account));
 	}
 }

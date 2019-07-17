@@ -9,11 +9,11 @@ public class RabbitMQConfig {
 
 	@Bean
 	public Queue userCreatedAccountQueue() {
-		return new Queue("usercreated.account.queue", true);
+		return new Queue("ivan.usercreated.account.queue", true);
 	}
 
 	@Bean
 	public Queue accountCreatedLogQueue() {
-		return new Queue("accountcreated.log.queue", true);
+		return new Queue("ivan.accountcreated.log.queue", true);
 	}
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.consulting.mgt.springboot.practica19.log.model.Account;
+import com.consulting.mgt.springboot.practica19.log.model.User;
 import com.consulting.mgt.springboot.practica19.log.repository.AccountLogRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,13 +24,18 @@ public class AccountCreatedLogRabbitListener {
 
 	@SneakyThrows
 	// Defina listener RabbitListener
+	@RabbitListener(queues = {"#{accountCreatedLogQueue.name}"})
 	public void handleUserCreatedEvent(String message) {
+		
 		log.info("rabbit listener Account Created Log Event");
 		// Recupere objeto Account
+		Account account = objectMapper.readValue(message, Account.class);
 		
-		// log.info("event: {}", account);
+		log.info("event: {}", account);
 
 		// Almacene objeto Account
+		
+		accountLogRepository.save(account);
 
 		log.info("--------------------------------------------------------------");
 	}

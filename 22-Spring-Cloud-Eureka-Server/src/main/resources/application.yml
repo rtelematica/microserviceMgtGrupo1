@@ -6,6 +6,9 @@ eureka:
   peer-2:
     host: eureka-host2
     port: 9092
+  peer-3:
+    host: eureka-host3
+    port: 9093
 
 management:
   endpoint:
@@ -23,10 +26,58 @@ management:
 spring:
   profiles: peer-1
 
+eureka:
+  instance:
+    hostname: ${eureka.peer-1.host}
+    appname: ${spring.application.name}-in-cluster
+    
+  client:
+    service-url:
+      defaultZone: http://${eureka.peer-2.host}:${eureka.peer-2.port}${server.servlet.context-path}/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: ${eureka.peer-1.port}
+  
 # 'peer-1' configuration
     
 ---
 spring:
   profiles: peer-2
 
+eureka:
+  instance:
+    hostname: ${eureka.peer-2.host}
+    appname: ${spring.application.name}-in-cluster
+    
+  client:
+    service-url:
+      defaultZone: http://${eureka.peer-1.host}:${eureka.peer-1.port}${server.servlet.context-path}/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: ${eureka.peer-2.port}
+
 # 'peer-2' configuration
+
+---
+spring:
+  profiles: peer-3
+
+eureka:
+  instance:
+    hostname: ${eureka.peer-3.host}
+    appname: ${spring.application.name}-in-cluster
+    
+  client:
+    service-url:
+      defaultZone: http://${eureka.peer-1.host}:${eureka.peer-1.port}${server.servlet.context-path}/eureka,http://${eureka.peer-2.host}:${eureka.peer-2.port}${server.servlet.context-path}/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: ${eureka.peer-3.port}
+  
+# 'peer-3' configuration

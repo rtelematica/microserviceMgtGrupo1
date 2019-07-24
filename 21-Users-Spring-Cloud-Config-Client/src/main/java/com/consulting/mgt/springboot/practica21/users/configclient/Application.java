@@ -4,8 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RefreshScope
+@RestController
 @SpringBootApplication
 public class Application {
 
@@ -19,11 +24,24 @@ public class Application {
 	@Value("${spring.profiles.active:no active profile}")
 	private String profile;
 
+	@GetMapping
+	public String hi() {
+		return hi + ", using profile: " + profile;
+	}
+	
 	@Bean
 	public CommandLineRunner startUp() {
 		return (args) -> {
 			System.out.println(hi);
 			System.out.println(profile);
 		};
+	}
+
+	@Value("${someKey:no message}")
+	private String key;
+
+	@GetMapping("/key")
+	public String someKey() {
+		return "someKey = " + key;
 	}
 }

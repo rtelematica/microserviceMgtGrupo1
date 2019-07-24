@@ -7,7 +7,6 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Primary
 @Service
 public class LocalUppercaseServiceClient implements IUppercaseService {
 
@@ -15,7 +14,7 @@ public class LocalUppercaseServiceClient implements IUppercaseService {
 	@SneakyThrows
 	public String toUppercase(String name) {
 
-		log.info("generating uppercase value for {}", name);
+		log.info("[local implementation] generating uppercase value for {}", name);
 
 		return name.toUpperCase();
 	}

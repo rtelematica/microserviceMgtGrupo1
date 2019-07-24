@@ -43,7 +43,7 @@ eureka:
     service-url:
       defaultZone: http://${eureka.single.host}:${eureka.single.port}${eureka.context-path}/eureka
   instance:
-    instance-id: ${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.name}:${server.port}:${random.value}
       
 server:
   port: ${PORT:${SERVER_PORT:0}}
@@ -53,4 +53,14 @@ server:
 ---
 spring:
   profiles: client-in-eureka-cluster
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.peer-1.host}:${eureka.peer-1.port}${eureka.context-path}/eureka,http://${eureka.peer-2.host}:${eureka.peer-2.port}${eureka.context-path}/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}:${random.value}
+      
+server:
+  port: ${PORT:${SERVER_PORT:0}}
 

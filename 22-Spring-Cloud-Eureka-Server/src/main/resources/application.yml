@@ -22,6 +22,7 @@ management:
       exposure:
         include: '*'
         
+# mvn spring-boot:run -Dspring-boot.run.arguments=--profile=<nombre>,...,--arg=<value>     
 ---
 spring:
   profiles: peer-1

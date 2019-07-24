@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,11 +21,14 @@ public class HelloRestController {
 
 	@Value("${spring.profiles.active}")
 	private String activeProfile;
+	
+	@Autowired
+	private Environment env;
 
-	@Autowired(required = false)
+	@Autowired
 	private DiscoveryClientHelper discoveryClientHelper;
 
-	@Autowired(required = false)
+	@Autowired
 	private EurekaClientHelper eurekaClientHelper;
 
 	@GetMapping("/hello")
@@ -35,6 +39,7 @@ public class HelloRestController {
 		map.put("message", "Hello !");
 		map.put("application name", name);
 		map.put("application port", MyListener.APPLICATION_PORT);
+		map.put("application port (not real)", env.getProperty("server.port"));
 		map.put("application profile", activeProfile);
 		map.put("URI from Discovery Client", discoveryClientHelper.getServiceURI("my-client-app"));
 		map.put("Instances from Discovery Client", discoveryClientHelper.getInstances("my-client-app"));

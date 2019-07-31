@@ -7,8 +7,11 @@ eureka:
     service-url: 
       defaultZone: http://${eureka.single-instance.host}:${eureka.single-instance.port}${eureka.context-path}/eureka
   instance:
+    # host:port/actuator/info => host:port/context-path/actuator/info
     statusPageUrlPath: ${server.servlet.context-path}${management.endpoints.web.base-path}/info
+    # host:port/actuator/health
     healthCheckUrlPath: ${server.servlet.context-path}${management.endpoints.web.base-path}/health
+    # app.name:0:123123123123123123
     instanceId: ${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}
 
 spring:
@@ -42,6 +45,7 @@ logging:
   level:
     #org.apache.http: DEBUG 
     # enable IRandomServiceClient Feign Client level DEBUG
+    com.consulting.mgt.springboot.practica24.feign.agemicroservice.client.IRandomServiceClient: DEBUG
     org.springframework.cloud: INFO
     com.netflix.loadbalancer: OFF
 

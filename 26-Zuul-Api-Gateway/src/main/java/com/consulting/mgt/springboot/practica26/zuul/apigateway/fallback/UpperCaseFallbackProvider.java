@@ -4,35 +4,36 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
 
+import com.netflix.hystrix.exception.HystrixTimeoutException;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class UpperCaseFallbackProvider /*implements FallbackProvider*/ {
+public class UpperCaseFallbackProvider implements FallbackProvider {
 
 	private String responseBody = "{\"message\":\"Service Unavailable. Please try after sometime\"}";
 
-	// @Override
+	@Override
 	public String getRoute() {
 		return "uppercase-microservice";
 	}
 
-	// @Override
+	@Override
 	public ClientHttpResponse fallbackResponse(String route, final Throwable cause) {
 		log.info("[Fallback Provider] Exception {}: {}", cause.getClass().getSimpleName(), cause.getMessage());
-		/*if (cause instanceof HystrixTimeoutException) {
+		if (cause instanceof HystrixTimeoutException) {
 			return response(HttpStatus.GATEWAY_TIMEOUT);
 		} else {
 			return response(HttpStatus.SERVICE_UNAVAILABLE);
-		}*/
-		
-		return null; // eliminar
+		}
 	}
 
 	private ClientHttpResponse response(final HttpStatus status) {

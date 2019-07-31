@@ -42,6 +42,14 @@ management:
         include: '*'
 
 # Zuul Configuration
+zuul:
+  prefix: /api
+  ignored-services: random-microservice,uppercase-microservice
+  routes:
+    upper:
+      path: /upper/**
+      service-id: uppercase-microservice
+    random-microservice: /random/**
 
 
 logging:

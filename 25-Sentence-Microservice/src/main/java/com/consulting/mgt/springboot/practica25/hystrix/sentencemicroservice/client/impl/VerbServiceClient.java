@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.consulting.mgt.springboot.practica25.hystrix.sentencemicroservice.client.IVerbServiceClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,7 @@ public class VerbServiceClient implements IVerbServiceClient {
 	@Override
 	@SneakyThrows
 	// Define comando Hystrix
+	@HystrixCommand(fallbackMethod="defaultVerb")
 	public String getVerb() {
 		URI uri = new URI(String.format("http://%s/word", serviceName));
 

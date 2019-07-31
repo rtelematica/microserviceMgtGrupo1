@@ -39,7 +39,7 @@ management:
       exposure:
         include: '*'
 
-words: "!,!!,!!!,!!!!"
+words: '!,!!,!!!,!!!!'
 
 logging:
   level:

@@ -17,7 +17,6 @@ management:
       enabled: true
   endpoints:
     web:
-      #base-path: /
       exposure:
         include: '*'
 
@@ -27,8 +26,6 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:${server.port}${server.servlet.context-path}/eureka
-
-#eureka.instance.hostname=${spring.cloud.client.hostname}
     
 # 127.0.0.1 eureka-host1
 # 127.0.0.1 eureka-host2
